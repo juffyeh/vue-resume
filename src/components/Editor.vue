@@ -14,7 +14,7 @@
         </nav>
         <ol class="panes">
             <li v-bind:class="{active: currentTab === 0}">
-                <ProfileEditor v-bind:profile="profile"/>
+                <WorkHistoryEditor v-bind:profile="profile"/>
             </li>
             <li v-bind:class="{active: currentTab === 1}">
                 <h2>工作经历</h2>
@@ -50,9 +50,9 @@
     </div>
 </template>
 <script>
-    import ProfileEditor from './ProfileEditor'
+    import WorkHistoryEditor from './WorkHistoryEditor'
     export default{
-        components:{ ProfileEditor },
+        components:{ WorkHistoryEditor },
         data(){
             return{
                 currentTab: 0,
