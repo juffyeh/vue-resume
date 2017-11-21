@@ -14,25 +14,10 @@
         </nav>
         <ol class="panes">
             <li v-bind:class="{active: currentTab === 0}">
-                <WorkHistoryEditor v-bind:profile="profile"/>
+                <ProfileEditor v-bind:profile="profile"/>
             </li>
             <li v-bind:class="{active: currentTab === 1}">
-                <h2>工作经历</h2>
-                <el-form v-bind:label-position="labelPosition">
-                    <div class="awork" v-for="(work,index) in workHistory">
-                        <el-form-item label="公司名称">
-                            <el-input v-model="work.name"></el-input>
-                        </el-form-item>
-                        <el-form-item label="起止时间">
-                            <el-input v-model="work.duration"></el-input>
-                        </el-form-item>
-                        <el-form-item label="工作内容">
-                            <el-input v-model="work.city"></el-input>
-                        </el-form-item>
-                        <i class="el-icon-delete" v-on:click="removeWorkHistory(index)"></i>
-                    </div>
-                    <el-button type="primary" v-on:click="addWorkHistory">添加</el-button>
-                </el-form>
+                <WorkHistoryEditor v-bind:workHistory="workHistory"/>
             </li>
             <li v-bind:class="{active: currentTab === 2}">
                 <h2>学习经历</h2>
@@ -50,14 +35,14 @@
     </div>
 </template>
 <script>
+    import ProfileEditor from './ProfileEditor'
     import WorkHistoryEditor from './WorkHistoryEditor'
     export default{
-        components:{ WorkHistoryEditor },
+        components:{ ProfileEditor,WorkHistoryEditor },
         data(){
             return{
                 currentTab: 0,
                 icons: ['sfz','bag','book','project','cup','phone'],
-                labelPosition: 'right',
                 profile: {
                     name: '',
                     age: '',
@@ -70,14 +55,7 @@
             }
         },
         methods:{
-            addWorkHistory(){
-                this.workHistory.push({
-                    company: '',duration: '',content: ''
-                })
-            },
-            removeWorkHistory(index){
-                this.workHistory.splice(index,1)
-            }
+
         },
         created(){
 
