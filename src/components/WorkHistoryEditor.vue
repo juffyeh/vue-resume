@@ -2,7 +2,7 @@
     <div>
         <h2>工作经历</h2>
         <el-form>
-            <div class="awork" v-for="(work,index) in workHistory">
+            <div class="container" v-for="(work,index) in workHistory">
                 <el-form-item label="公司名称">
                     <el-input v-model="work.name"></el-input>
                 </el-form-item>
@@ -14,7 +14,7 @@
                 </el-form-item>
                 <i class="el-icon-delete" v-on:click="removeWorkHistory(index)"></i>
             </div>
-            <el-button type="primary" v-on:click="addWorkHistory">添加</el-button>
+            <el-button type="primary" v-on:click="addWorkHistory">添加一项</el-button>
         </el-form>
     </div>
 </template>
