@@ -19,7 +19,7 @@ export default {
     return{
       previewMode: false,
       resume:{
-        profile: [{name: '',age: '',city: '',birth: ''}],
+        profile:[ {name: '',age: '',city: '',birth: ''} ],
         workHistory:[ {company: '',duration: '',content: '',} ],
         studyHistory:[ {school: '',time: '',major: '',degree: ''} ],
         projects:[ {name: '',content: ''} ],
@@ -67,7 +67,7 @@ html,body,#app{
        fill: currentColor;
        overflow: hidden;
 }
-main{
+#app main{
   display: flex;
   flex: 1;
   background: #ddd;

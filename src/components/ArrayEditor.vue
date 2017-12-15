@@ -29,7 +29,9 @@
                 this.items.push(empty)
             },
             removeItem(index){
-                this.items.splice(index,1)
+                if(index > 0){
+                    this.items.splice(index,1)
+                }
             }
         }
     }
