@@ -2,9 +2,9 @@
     <div>
         <h2>{{title}}</h2>
         <el-form>
-            <div class="container" v-for="(work,index) in items" v-bind:key="index">
+            <div class="container" v-for="(item,index) in items" v-bind:key="index">
                 <el-form-item v-for="key in keys" v-bind:label="labels[key] || key" v-bind:key="key">
-                    <el-input v-model="work.name"></el-input>
+                    <el-input v-model="item[key]"></el-input>
                 </el-form-item>
                 <i class="el-icon-delete" v-on:click="removeItem(index)"></i>
             </div>
